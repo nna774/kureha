@@ -1,0 +1,14 @@
+[Unit]
+Description=kureha
+
+[Service]
+ExecStart=/bin/bash -c "cd /home/nona/kureha; /home/nona/.gem/ruby/2.2.0/bin/bundle exec ruby kureha.rb"
+ExecReload=/bin/bash -c "cd /home/nona/kureha; /home/nona/.gem/ruby/2.2.0/bin/bundle exec ruby kureha.rb"
+KillMode=control-group
+Restart=on-failure
+RestartSec=42s
+
+Type=simple
+
+[Install]
+WantedBy=default.target
